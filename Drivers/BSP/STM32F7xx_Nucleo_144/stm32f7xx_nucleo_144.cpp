@@ -7,17 +7,6 @@
 
 #include "stm32f7xx_nucleo_144.h"
 
-#ifdef DONT
-stm32f7xx_nucleo_144() {
-	// TODO Auto-generated constructor stub
-
-}
-
-~stm32f7xx_nucleo_144() {
-	// TODO Auto-generated destructor stub
-}
-#endif
-
 /** @addtogroup BSP
   * @{
   */
@@ -160,7 +149,7 @@ static void ADCx_MspDeInit(ADC_HandleTypeDef *hadc);
 
 /* Defined in another module */
 #ifndef __STM32F7XX_NUCLEO_H
-uint32_t BSP_GetVersion(void)
+uint32_t stm32f7xx_nucleo_144::GetVersion(void)
 {
  return __STM32F7xx_NUCLEO_BSP_VERSION;
 }
@@ -175,7 +164,7 @@ uint32_t BSP_GetVersion(void)
   *     @arg  LED3
   * @retval None
   */
-void BSP_LED_Init(Led_TypeDef Led)
+void stm32f7xx_nucleo_144::LED_Init(Led_TypeDef Led)
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
 
@@ -202,7 +191,7 @@ void BSP_LED_Init(Led_TypeDef Led)
   * @note Led DeInit does not disable the GPIO clock nor disable the Mfx
   * @retval None
   */
-void BSP_LED_DeInit(Led_TypeDef Led)
+void stm32f7xx_nucleo_144::LED_DeInit(Led_TypeDef Led)
 {
   GPIO_InitTypeDef  gpio_init_structure;
 
@@ -220,7 +209,7 @@ void BSP_LED_DeInit(Led_TypeDef Led)
   *     @arg LED2
   * @retval None
   */
-void BSP_LED_On(Led_TypeDef Led)
+void stm32f7xx_nucleo_144::LED_On(Led_TypeDef Led)
 {
   HAL_GPIO_WritePin(LED_PORT[Led], LED_PIN[Led], GPIO_PIN_SET);
 }
@@ -234,7 +223,7 @@ void BSP_LED_On(Led_TypeDef Led)
   *     @arg  LED3
   * @retval None
   */
-void BSP_LED_Off(Led_TypeDef Led)
+void stm32f7xx_nucleo_144::LED_Off(Led_TypeDef Led)
 {
   HAL_GPIO_WritePin(LED_PORT[Led], LED_PIN[Led], GPIO_PIN_RESET);
 }
@@ -248,7 +237,7 @@ void BSP_LED_Off(Led_TypeDef Led)
   *     @arg  LED3
   * @retval None
   */
-void BSP_LED_Toggle(Led_TypeDef Led)
+void stm32f7xx_nucleo_144::LED_Toggle(Led_TypeDef Led)
 {
   HAL_GPIO_TogglePin(LED_PORT[Led], LED_PIN[Led]);
 }
@@ -264,7 +253,7 @@ void BSP_LED_Toggle(Led_TypeDef Led)
   *                            generation capability
   * @retval None
   */
-void BSP_PB_Init(Button_TypeDef Button, ButtonMode_TypeDef ButtonMode)
+void stm32f7xx_nucleo_144::PB_Init(Button_TypeDef Button, ButtonMode_TypeDef ButtonMode)
 {
   GPIO_InitTypeDef GPIO_InitStruct;
 
@@ -302,7 +291,7 @@ void BSP_PB_Init(Button_TypeDef Button, ButtonMode_TypeDef ButtonMode)
   * @note PB DeInit does not disable the GPIO clock
   * @retval None
   */
-void BSP_PB_DeInit(Button_TypeDef Button)
+void stm32f7xx_nucleo_144::PB_DeInit(Button_TypeDef Button)
 {
     GPIO_InitTypeDef gpio_init_structure;
 
@@ -317,60 +306,60 @@ void BSP_PB_DeInit(Button_TypeDef Button)
   *   This parameter should be: BUTTON_USER
   * @retval The Button GPIO pin value.
   */
-uint32_t BSP_PB_GetState(Button_TypeDef Button)
+uint32_t stm32f7xx_nucleo_144::PB_GetState(Button_TypeDef Button)
 {
   return HAL_GPIO_ReadPin(BUTTON_PORT[Button], BUTTON_PIN[Button]);
 }
 
 
-void BSP_digitalSet(uint16_t pin)
+void stm32f7xx_nucleo_144::digitalSet(uint16_t pin)
 {
 	HAL_GPIO_WritePin(GPIO_PORT[pin], GPIO_PIN[pin], GPIO_PIN_SET);
 }
 
 
-void BSP_PinSet(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+void stm32f7xx_nucleo_144::PinSet(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
 {
 	HAL_GPIO_WritePin(GPIOx, GPIO_Pin, GPIO_PIN_SET);
 }
 
-void BSP_digitalReset(uint16_t pin)
+void stm32f7xx_nucleo_144::digitalReset(uint16_t pin)
 {
 	HAL_GPIO_WritePin(GPIO_PORT[pin], GPIO_PIN[pin], GPIO_PIN_SET);
 }
 
-void BSP_PinReset(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+void stm32f7xx_nucleo_144::PinReset(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
 {
 	HAL_GPIO_WritePin(GPIOx, GPIO_Pin, GPIO_PIN_RESET);
 }
 
-GPIO_PinState BSP_digitalRead(uint16_t pin)
+GPIO_PinState stm32f7xx_nucleo_144::digitalRead(uint16_t pin)
 {
 	return HAL_GPIO_ReadPin(GPIO_PORT[pin], GPIO_PIN[pin]);
 }
 
-GPIO_PinState BSP_PinRead(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+GPIO_PinState stm32f7xx_nucleo_144::PinRead(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
 {
 	return HAL_GPIO_ReadPin(GPIOx, GPIO_Pin);
 }
 
-void BSP_digitalWrite(uint16_t pin, GPIO_PinState PinState)
+void stm32f7xx_nucleo_144::digitalWrite(uint16_t pin, GPIO_PinState PinState)
 {
 	HAL_GPIO_WritePin(GPIO_PORT[pin], GPIO_PIN[pin], PinState);
 }
 
 
-void BSP_PinWrite(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState)
+void stm32f7xx_nucleo_144::PinWrite(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState)
 {
 	HAL_GPIO_WritePin(GPIOx, GPIO_Pin, PinState);
 }
 
-void BSP_digitalToggle(uint16_t pin)
+void stm32f7xx_nucleo_144::digitalToggle(uint16_t pin)
 {
 	HAL_GPIO_TogglePin(GPIO_PORT[pin], GPIO_PIN[pin]);
 }
 
-void BSP_TogglePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+void stm32f7xx_nucleo_144::TogglePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
 {
 	HAL_GPIO_TogglePin(GPIOx, GPIO_Pin);
 }
@@ -396,7 +385,7 @@ void HAL_GPIO_TogglePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
   * @param  None
   * @retval None
   */
-void BSP_SPIx_MspInit(SPI_HandleTypeDef *hspi)
+void stm32f7xx_nucleo_144::SPIx_MspInit(SPI_HandleTypeDef *hspi)
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
 
@@ -434,7 +423,7 @@ void BSP_SPIx_MspInit(SPI_HandleTypeDef *hspi)
   * @param  None
   * @retval None
   */
-void BSP_SPIx_Init(void)
+void stm32f7xx_nucleo_144::SPIx_Init(void)
 {
 	// TODO: Set-up for PLC
 
@@ -462,7 +451,7 @@ void BSP_SPIx_Init(void)
     hnucleo_Spi.Init.TIMode = SPI_TIMODE_DISABLE;
     hnucleo_Spi.Init.Mode = SPI_MODE_MASTER;
 
-    BSP_SPIx_MspInit(&hnucleo_Spi);
+    SPIx_MspInit(&hnucleo_Spi);
     HAL_SPI_Init(&hnucleo_Spi);
   }
 }
@@ -472,7 +461,7 @@ void BSP_SPIx_Init(void)
   * @param  Value: value to be written
   * @retval None
   */
-void BSP_SPIx_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint16_t DataLegnth)
+void stm32f7xx_nucleo_144::SPIx_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint16_t DataLegnth)
 {
   HAL_StatusTypeDef status = HAL_OK;
 
@@ -482,7 +471,7 @@ void BSP_SPIx_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint16_t Da
   if(status != HAL_OK)
   {
     /* Execute user timeout callback */
-    BSP_SPIx_Error();
+    SPIx_Error();
   }
 }
 
@@ -491,7 +480,7 @@ void BSP_SPIx_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint16_t Da
   * @param  Value: value to be written
   * @retval None
   */
-void BSP_SPIx_Write(uint8_t Value)
+void stm32f7xx_nucleo_144::SPIx_Write(uint8_t Value)
 {
   HAL_StatusTypeDef status = HAL_OK;
   uint8_t data;
@@ -502,7 +491,7 @@ void BSP_SPIx_Write(uint8_t Value)
   if(status != HAL_OK)
   {
     /* Execute user timeout callback */
-    BSP_SPIx_Error();
+    SPIx_Error();
   }
 }
 
@@ -511,13 +500,13 @@ void BSP_SPIx_Write(uint8_t Value)
   * @param  None
   * @retval None
   */
-void BSP_SPIx_Error (void)
+void stm32f7xx_nucleo_144::SPIx_Error (void)
 {
   /* De-initialize the SPI communication BUS */
   HAL_SPI_DeInit(&hnucleo_Spi);
 
   /* Re-Initiaize the SPI communication BUS */
-  BSP_SPIx_Init();
+  SPIx_Init();
 }
 
 /******************************************************************************
@@ -531,7 +520,7 @@ void BSP_SPIx_Error (void)
   * @param  None
   * @retval None
   */
-void BSPSD_IO_Init(void)
+void stm32f7xx_nucleo_144::SD_IO_Init(void)
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
   uint8_t counter;
@@ -560,7 +549,7 @@ void BSPSD_IO_Init(void)
 
   /*------------Put SD in SPI mode--------------*/
   /* SD SPI Config */
-  BSP_SPIx_Init();
+  SPIx_Init();
 
   /* SD chip select high */
   SD_CS_HIGH();
@@ -570,7 +559,7 @@ void BSPSD_IO_Init(void)
   for (counter = 0; counter <= 9; counter++)
   {
     /* Send dummy byte 0xFF */
-    BSP_SD_IO_WriteByte(SD_DUMMY_BYTE);
+    SD_IO_WriteByte(SD_DUMMY_BYTE);
   }
 }
 
@@ -579,7 +568,7 @@ void BSPSD_IO_Init(void)
   * @param  pin value.
   * @retval None
   */
-void BSP_SD_IO_CSState(uint8_t val)
+void stm32f7xx_nucleo_144::SD_IO_CSState(uint8_t val)
 {
   if(val == 1)
   {
@@ -596,10 +585,10 @@ void BSP_SD_IO_CSState(uint8_t val)
   * @param  Data: byte to send.
   * @retval None
   */
-void BSP_SD_IO_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint16_t DataLength)
+void stm32f7xx_nucleo_144::SD_IO_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint16_t DataLength)
 {
   /* Send the byte */
-  BSP_SPIx_WriteReadData(DataIn, DataOut, DataLength);
+  SPIx_WriteReadData(DataIn, DataOut, DataLength);
 }
 
 /**
@@ -607,12 +596,12 @@ void BSP_SD_IO_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint16_t D
   * @param  Data: byte to send.
   * @retval None
   */
-uint8_t BSP_SD_IO_WriteByte(uint8_t Data)
+uint8_t stm32f7xx_nucleo_144::SD_IO_WriteByte(uint8_t Data)
 {
   uint8_t tmp;
   /* Send the byte */
-  BSP_SPIx_WriteReadData(&Data,&tmp,1);
-  return tmp;
+  SPIx_WriteReadData(&Data,&tmp,1);
+  return (tmp);
 }
 
 
@@ -623,7 +612,7 @@ uint8_t BSP_SD_IO_WriteByte(uint8_t Data)
   * @param  None
   * @retval None
   */
-void BSP_LCD_IO_Init(void)
+void stm32f7xx_nucleo_144::LCD_IO_Init(void)
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
 
@@ -654,7 +643,7 @@ void BSP_LCD_IO_Init(void)
   * @param  LCDReg: Address of the selected register.
   * @retval None
   */
-void BSP_LCD_IO_WriteReg(uint8_t LCDReg)
+void stm32f7xx_nucleo_144::LCD_IO_WriteReg(uint8_t LCDReg)
 {
   /* Reset LCD control line CS */
   LCD_CS_LOW();
@@ -675,7 +664,7 @@ void BSP_LCD_IO_WriteReg(uint8_t LCDReg)
   * @param  Data: data to write to the selected register.
   * @retval None
   */
-void BSP_LCD_IO_WriteData(uint8_t Data)
+void stm32f7xx_nucleo_144::LCD_IO_WriteData(uint8_t Data)
 {
   /* Reset LCD control line CS */
   LCD_CS_LOW();
@@ -696,7 +685,7 @@ void BSP_LCD_IO_WriteData(uint8_t Data)
 * @param  Size Size of byte to transmit to the register
 * @retval None
 */
-void BSP_LCD_IO_WriteMultipleData(uint8_t *pData, uint32_t Size)
+void stm32f7xx_nucleo_144::LCD_IO_WriteMultipleData(uint8_t *pData, uint32_t Size)
 {
   uint32_t counter = 0;
   __IO uint32_t data = 0;
@@ -752,7 +741,7 @@ void BSP_LCD_IO_WriteMultipleData(uint8_t *pData, uint32_t Size)
   * @param  Delay in ms.
   * @retval None
   */
-void BSP_LCD_Delay(uint32_t Delay)
+void stm32f7xx_nucleo_144::LCD_Delay(uint32_t Delay)
 {
   HAL_Delay(Delay);
 }
@@ -767,7 +756,7 @@ void BSP_LCD_Delay(uint32_t Delay)
   * @param  None
   * @retval None
   */
-static void BSP_ADCx_MspInit(ADC_HandleTypeDef *hadc)
+static void stm32f7xx_nucleo_144::ADCx_MspInit(ADC_HandleTypeDef *hadc)
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
 
@@ -792,7 +781,7 @@ static void BSP_ADCx_MspInit(ADC_HandleTypeDef *hadc)
   * @note ADC DeInit does not disable the GPIO clock
   * @retval None
   */
-static void BSP_ADCx_MspDeInit(ADC_HandleTypeDef *hadc)
+static void stm32f7xx_nucleo_144::ADCx_MspDeInit(ADC_HandleTypeDef *hadc)
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
 
@@ -813,7 +802,7 @@ static void BSP_ADCx_MspDeInit(ADC_HandleTypeDef *hadc)
   * @param  None
   * @retval None
   */
-static void BSP_ADCx_Init(void)
+static void stm32f7xx_nucleo_144::ADCx_Init(void)
 {
   if(HAL_ADC_GetState(&hnucleo_Adc) == HAL_ADC_STATE_RESET)
   {
@@ -839,7 +828,7 @@ static void BSP_ADCx_Init(void)
   * @param  None
   * @retval None
   */
-static void BSP_ADCx_DeInit(void)
+static void stm32f7xx_nucleo_144::ADCx_DeInit(void)
 {
     hnucleo_Adc.Instance   = NUCLEO_ADCx;
 
@@ -855,7 +844,8 @@ static void BSP_ADCx_DeInit(void)
   * @param  None
   * @retval Joystickstatus (0=> success, 1=> fail)
   */
-uint8_t BSP_JOY_Init(void)
+#ifdef JOY_ENABLED
+uint8_t stm32f7xx_nucleo_144::JOY_Init(void)
 {
   uint8_t status = HAL_ERROR;
 
@@ -876,7 +866,7 @@ uint8_t BSP_JOY_Init(void)
   * @note   JOY DeInit does not disable the Mfx, just set the Mfx pins in Off mode
   * @retval None.
   */
-void BSP_JOY_DeInit(void)
+void stm32f7xx_nucleo_144::JOY_DeInit(void)
 {
     ADCx_DeInit();
 }
@@ -893,7 +883,7 @@ void BSP_JOY_DeInit(void)
   *           - UP    : 1.65 V / 2046
   * @retval JOYState_TypeDef: Code of the Joystick key pressed.
   */
-JOYState_TypeDef BSP_JOY_GetState(void)
+JOYState_TypeDef stm32f7xx_nucleo_144::JOY_GetState(void)
 {
   JOYState_TypeDef state;
   uint16_t  keyconvertedvalue = 0;
@@ -945,6 +935,9 @@ JOYState_TypeDef BSP_JOY_GetState(void)
   /* Return the code of the Joystick key pressed */
   return state;
 }
+
+#endif /* JOY_ENABLED */
+
 #endif /* HAL_ADC_MODULE_ENABLED */
 
 #endif /* ADAFRUIT_TFT_JOY_SD_ID802 */
