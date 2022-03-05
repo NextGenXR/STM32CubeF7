@@ -5,16 +5,18 @@
  *      Author: jenni
  */
 
-#ifndef BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_H_
-#define BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_H_
+#ifndef BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_HPP_
+#define BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_HPP_
 
 /* Includes ------------------------------------------------------------------*/
+#include "main.h"
 #include <stm32_includes.h>
 #include HAL_SPI_H
+#include "spi.h"
 #include CONSTANTS_H
 #include PROCESSOR_H
 
-//#include <cstdbool>
+/* #include <cstdbool>*/
 
 /* To be defined only if the board is provided with the related shield */
 /* https://www.adafruit.com/products/802 */
@@ -121,7 +123,7 @@ typedef enum
 /** @addtogroup STM32F7XX_NUCLEO_144_LOW_LEVEL_BUTTON
   * @{
   */
-#define BUTTONn                                 1
+#define BUTTONn 1
 
 /**
  * @brief Key push-button
@@ -262,113 +264,6 @@ typedef enum
 
 #endif /* HAL_ADC_MODULE_ENABLED */
 
-/**
-  * @}
-  */
-
-/**
-  * @}
-  */
-
-/** @defgroup STM32F7XX_NUCLEO_144_LOW_LEVEL_Exported_Macros
-  * @{
-  */
-/**
-  * @}
-  */
-
-#ifndef DONT
-class stm32f7xx_nucleo_144
-{
-public:
-
-	stm32f7xx_nucleo_144();
-	~stm32f7xx_nucleo_144();
-#endif
-
-/** @defgroup STM32F7XX_NUCLEO_144_LOW_LEVEL_Exported_Functions
-  * @{
-  */
-//#ifdef __cplusplus
-//extern "C" {
-//#endif
-#ifndef __STM32F7XX_NUCLEO_H
-	uint32_t	GetVersion(void);
-#endif
-
-	void        LED_Init(Led_TypeDef Led);
-	void        LED_DeInit(Led_TypeDef Led);
-	void        LED_On(Led_TypeDef Led);
-	void        LED_Off(Led_TypeDef Led);
-	void       	LED_Toggle(Led_TypeDef Led);
-	void        PB_Init(Button_TypeDef Button, ButtonMode_TypeDef ButtonMode);
-	void        PB_DeInit(Button_TypeDef Button);
-	uint32_t    PB_GetState(Button_TypeDef Button);
-
-	void 		Pin_Init(uint8_t pin, bool type);
-
-	void 		digitalSet(uint16_t GPIO_Pin);
-	void 		digitalReset(uint16_t GPIO_Pin);
-	GPIO_PinState digitalRead(uint16_t GPIO_Pin);
-	void 		digitalWrite(uint16_t GPIO_Pin, GPIO_PinState PinState);
-	void 		digitalToggle(uint16_t GPIO_Pin);
-
-	void 		PinSet(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
-	void 		PinReset(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
-	GPIO_PinState PinRead(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
-	void 		PinWrite(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
-	void 		TogglePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
 
 
-#ifdef HAL_SPI_MODULE_ENABLED
-
-#define SPI_PORT hspi
-
-	extern SPI_HandleTypeDef SPI_PORT;
-	#define hnucleo_Spi SPI_PORT
-	#define SpixTimeout 0x100
-
-	void SP_SPIx_Init();
-	void SD_IO_Init(void);
-	void SD_IO_CSState(uint8_t val);
-	void SD_IO_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint16_t DataLength);
-	uint8_t SD_IO_WriteByte(uint8_t Data);
-
-	void SPIx_Error (void);
-	void SPIx_Write(uint8_t Value);
-	void SPIx_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint16_t DataLegnth);
-	void SPIx_Init(void);
-	void SPIx_MspInit(SPI_HandleTypeDef *SPI_PORT);
-#endif
-
-#ifdef JOY_ENABLED
-	uint8_t          JOY_Init(void);
-	JOYState_TypeDef JOY_GetState(void);
-	void             JOY_DeInit(void);
-#endif /* HAL_ADC_MODULE_ENABLED */
-
-//#ifdef __cplusplus
-//}
-//#endif
-/**
-  * @}
-  */
-
-/**
-  * @}
-  */
-
-/**
-  * @}
-  */
-
-/**
-  * @}
-  */
-
-
-#ifndef DONT
-};
-#endif
-
-#endif /* BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_H_ */
+#endif /* BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_HPP_ */
