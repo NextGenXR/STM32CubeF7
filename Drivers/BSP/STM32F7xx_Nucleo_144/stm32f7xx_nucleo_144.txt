@@ -5,35 +5,7 @@
  *      Author: jenni
  */
 
-#ifdef DONT
-
-#include <stm32f7xx_nucleo_144.hpp>
-
-/** @addtogroup BSP
-  * @{
-  */
-
-/** @addtogroup STM32F7XX_NUCLEO_144
-  * @{
-  */
-
-/** @addtogroup STM32F7XX_NUCLEO_144_LOW_LEVEL
-  * @brief This file provides set of firmware functions to manage Leds and push-button
-  *        available on STM32F7xx-Nucleo Kit from STMicroelectronics.
-  * @{
-  */
-
-/** @defgroup STM32F7XX_NUCLEO_144_LOW_LEVEL_Private_TypesDefinitions
-  * @{
-  */
-/**
-  * @}
-  */
-
-
-/** @defgroup STM32F7XX_NUCLEO_144_LOW_LEVEL_Private_Defines
-  * @{
-  */
+#include "stm32f7xx_nucleo_144.h"
 
 
 stm32f7xx_nucleo_144() {
@@ -464,8 +436,8 @@ void BSP_SPIx_MspInit(SPI_HandleTypeDef *hspi)
   */
 void BSP_SPIx_Init(void)
 {
-	/*
-	 * TODO: Set-up for PLC
+	/* 
+	 * TODO: Set-up for PLC 
 	 */
 
   if(HAL_SPI_GetState(&hnucleo_Spi) == HAL_SPI_STATE_RESET)
@@ -642,7 +614,7 @@ uint8_t BSP_SD_IO_WriteByte(uint8_t Data)
   uint8_t tmp;
   /* Send the byte */
   BSP_SPIx_WriteReadData(&Data,&tmp,1);
-  return (tmp);
+  return tmp;
 }
 
 
@@ -979,7 +951,23 @@ JOYState_TypeDef BSP_JOY_GetState(void)
 
 #endif /* ADAFRUIT_TFT_JOY_SD_ID802 */
 
-#endif
+
+/**
+  * @}
+  */
+
+/**
+  * @}
+  */
+
+/**
+  * @}
+  */
+
+/**
+  * @}
+  */
+
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
 
 

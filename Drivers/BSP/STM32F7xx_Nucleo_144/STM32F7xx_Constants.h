@@ -8,12 +8,17 @@
 #ifndef _STM32F7xx_CONSTANTS_H_
 #define _STM32F7xx_CONSTANTS_H_
 
-
 #include "main.h"
+#include "stm32_includes.h"
 #include "CM3KConstants.h"
-#include NUCLEO_H
 #include VARIANT_H
+#include <stm32f7xx_nucleo_144.hpp>
 
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
 typedef struct GPIO_Pin
 {
@@ -372,5 +377,9 @@ typedef GPIO_Pin GPIO_Pin;
 #define VNI8200XP_ENABLE_PIN            GPIO_PIN_10
 #endif
 
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
