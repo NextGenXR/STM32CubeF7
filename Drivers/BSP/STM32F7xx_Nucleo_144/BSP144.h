@@ -17,7 +17,9 @@
 /*
  *
  */
-class BSP_144 : BSP_Class
+#ifdef __cplusplus
+
+class BSP_144 : public BSP_Class
 {
 public:
 	BSP_144();
@@ -27,9 +29,13 @@ public:
 
 protected:
 
+
 private:
 
 
+
 };
+
+#endif /* cpp */
 
 #endif /* BSP_STM32F7XX_NUCLEO_144_BSP144_H_ */
