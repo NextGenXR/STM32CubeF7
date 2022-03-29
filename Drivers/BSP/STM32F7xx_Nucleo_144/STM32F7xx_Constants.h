@@ -8,11 +8,11 @@
 #ifndef _STM32F7xx_CONSTANTS_H_
 #define _STM32F7xx_CONSTANTS_H_
 
+#include <stm32f7xx_nucleo_144.h>
 #include "main.h"
 #include "stm32_includes.h"
 #include "CM3KConstants.h"
 #include VARIANT_H
-#include <stm32f7xx_nucleo_144.hpp>
 
 
 #ifdef __cplusplus

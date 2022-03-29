@@ -5,7 +5,7 @@
  *      Author: jenni
  */
 
-#include <stm32f7xx_nucleo_144.hpp>
+#include <stm32f7xx_nucleo_144.h>
 #include <stm32f7xx_nucleo_144_bsp.h>
 
 stm32f7xx_nucleo_144_bsp::stm32f7xx_nucleo_144_bsp() {

@@ -5,8 +5,8 @@
  *      Author: jenni
  */
 
-#ifndef BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_HPP_
-#define BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_HPP_
+#ifndef BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_H_
+#define BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_H_
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -228,4 +228,4 @@
 #endif /* HAL_ADC_MODULE_ENABLED */
 
 
-#endif /* BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_HPP_ */
+#endif /* BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_H_ */

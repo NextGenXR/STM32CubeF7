@@ -20,7 +20,7 @@
 #ifdef NUCLEO_H
 #include NUCLEO_H
 #else
-#include <stm32f7xx_nucleo_144.hpp>
+#include <stm32f7xx_nucleo_144.h>
 #endif
 
 #include <BSP_Types.h>
@@ -63,13 +63,13 @@ static ADC_ChannelConfTypeDef sConfig;
 
 
 
-BSP_144::BSP_144()
+BSP144::BSP144()
 {
 	// ToDo: Auto-generated constructor stub
 
 }
 
-BSP_144::~BSP_144()
+BSP144::~BSP144()
 {
 	// ToDo: Auto-generated destructor stub
 }
@@ -185,7 +185,7 @@ static void ADCx_MspDeInit(ADC_HandleTypeDef *hadc);
   *     @arg  LED3
   * @retval None
   */
-void BSP_144::LED_Init(Led_TypeDef Led)
+void BSP144::LED_Init(Led_TypeDef Led)
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
 
@@ -212,7 +212,7 @@ void BSP_144::LED_Init(Led_TypeDef Led)
   * @note Led DeInit does not disable the GPIO clock nor disable the Mfx
   * @retval None
   */
-void BSP_144::LED_DeInit(Led_TypeDef Led)
+void BSP144::LED_DeInit(Led_TypeDef Led)
 {
   GPIO_InitTypeDef  gpio_init_structure;
 
@@ -230,7 +230,7 @@ void BSP_144::LED_DeInit(Led_TypeDef Led)
   *     @arg LED2
   * @retval None
   */
-void BSP_144::LED_On(Led_TypeDef Led)
+void BSP144::LED_On(Led_TypeDef Led)
 {
   HAL_GPIO_WritePin(LED_PORT[Led], LED_PIN[Led], GPIO_PIN_SET);
 }
@@ -244,7 +244,7 @@ void BSP_144::LED_On(Led_TypeDef Led)
   *     @arg  LED3
   * @retval None
   */
-void BSP_144::LED_Off(Led_TypeDef Led)
+void BSP144::LED_Off(Led_TypeDef Led)
 {
   HAL_GPIO_WritePin(LED_PORT[Led], LED_PIN[Led], GPIO_PIN_RESET);
 }
@@ -258,7 +258,7 @@ void BSP_144::LED_Off(Led_TypeDef Led)
   *     @arg  LED3
   * @retval None
   */
-void BSP_144::LED_Toggle(Led_TypeDef Led)
+void BSP144::LED_Toggle(Led_TypeDef Led)
 {
   HAL_GPIO_TogglePin(LED_PORT[Led], LED_PIN[Led]);
 }
@@ -274,7 +274,7 @@ void BSP_144::LED_Toggle(Led_TypeDef Led)
   *                            generation capability
   * @retval None
   */
-void BSP_144::PB_Init(Button_TypeDef Button, ButtonMode_TypeDef ButtonMode)
+void BSP144::PB_Init(Button_TypeDef Button, ButtonMode_TypeDef ButtonMode)
 {
   GPIO_InitTypeDef GPIO_InitStruct;
 
@@ -312,7 +312,7 @@ void BSP_144::PB_Init(Button_TypeDef Button, ButtonMode_TypeDef ButtonMode)
   * @note PB DeInit does not disable the GPIO clock
   * @retval None
   */
-void BSP_144::PB_DeInit(Button_TypeDef Button)
+void BSP144::PB_DeInit(Button_TypeDef Button)
 {
     GPIO_InitTypeDef gpio_init_structure;
 
@@ -327,60 +327,60 @@ void BSP_144::PB_DeInit(Button_TypeDef Button)
   *   This parameter should be: BUTTON_USER
   * @retval The Button GPIO pin value.
   */
-uint32_t BSP_144::PB_GetState(Button_TypeDef Button)
+uint32_t BSP144::PB_GetState(Button_TypeDef Button)
 {
   return HAL_GPIO_ReadPin(BUTTON_PORT[Button], BUTTON_PIN[Button]);
 }
 
 
-void BSP_144::digitalSet(uint16_t pin)
+void BSP144::digitalSet(uint16_t pin)
 {
 	HAL_GPIO_WritePin(GPIO_PORT[pin], GPIO_PIN[pin], GPIO_PIN_SET);
 }
 
 
-void BSP_144::PinSet(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+void BSP144::PinSet(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
 {
 	HAL_GPIO_WritePin(GPIOx, GPIO_Pin, GPIO_PIN_SET);
 }
 
-void BSP_144::digitalReset(uint16_t pin)
+void BSP144::digitalReset(uint16_t pin)
 {
 	HAL_GPIO_WritePin(GPIO_PORT[pin], GPIO_PIN[pin], GPIO_PIN_SET);
 }
 
-void BSP_144::PinReset(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+void BSP144::PinReset(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
 {
 	HAL_GPIO_WritePin(GPIOx, GPIO_Pin, GPIO_PIN_RESET);
 }
 
-GPIO_PinState BSP_144::digitalRead(uint16_t pin)
+GPIO_PinState BSP144::digitalRead(uint16_t pin)
 {
 	return HAL_GPIO_ReadPin(GPIO_PORT[pin], GPIO_PIN[pin]);
 }
 
-GPIO_PinState BSP_144::PinRead(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+GPIO_PinState BSP144::PinRead(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
 {
 	return HAL_GPIO_ReadPin(GPIOx, GPIO_Pin);
 }
 
-void BSP_144::digitalWrite(uint16_t pin, GPIO_PinState PinState)
+void BSP144::digitalWrite(uint16_t pin, GPIO_PinState PinState)
 {
 	HAL_GPIO_WritePin(GPIO_PORT[pin], GPIO_PIN[pin], PinState);
 }
 
 
-void BSP_144::PinWrite(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState)
+void BSP144::PinWrite(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState)
 {
 	HAL_GPIO_WritePin(GPIOx, GPIO_Pin, PinState);
 }
 
-void BSP_144::digitalToggle(uint16_t pin)
+void BSP144::digitalToggle(uint16_t pin)
 {
 	HAL_GPIO_TogglePin(GPIO_PORT[pin], GPIO_PIN[pin]);
 }
 
-void BSP_144::TogglePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+void BSP144::TogglePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
 {
 	HAL_GPIO_TogglePin(GPIOx, GPIO_Pin);
 }
@@ -406,7 +406,7 @@ void HAL_GPIO_TogglePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
   * @param  None
   * @retval None
   */
-void BSP_144::SPIx_MspInit(SPI_HandleTypeDef *hspi)
+void BSP144::SPIx_MspInit(SPI_HandleTypeDef *hspi)
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
 
@@ -444,7 +444,7 @@ void BSP_144::SPIx_MspInit(SPI_HandleTypeDef *hspi)
   * @param  None
   * @retval None
   */
-void BSP_144::SPIx_Init(void)
+void BSP144::SPIx_Init(void)
 {
 	/*
 	 * TODO: Set-up for PLC
@@ -484,7 +484,7 @@ void BSP_144::SPIx_Init(void)
   * @param  Value: value to be written
   * @retval None
   */
-void BSP_144::SPIx_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint16_t DataLegnth)
+void BSP144::SPIx_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint16_t DataLegnth)
 {
   HAL_StatusTypeDef status = HAL_OK;
 
@@ -503,7 +503,7 @@ void BSP_144::SPIx_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint16
   * @param  Value: value to be written
   * @retval None
   */
-void BSP_144::SPIx_Write(uint8_t Value)
+void BSP144::SPIx_Write(uint8_t Value)
 {
   HAL_StatusTypeDef status = HAL_OK;
   uint8_t data;
@@ -523,7 +523,7 @@ void BSP_144::SPIx_Write(uint8_t Value)
   * @param  None
   * @retval None
   */
-void BSP_144::SPIx_Error (void)
+void BSP144::SPIx_Error (void)
 {
   /* De-initialize the SPI communication BUS */
   HAL_SPI_DeInit(&hnucleo_Spi);
@@ -543,7 +543,7 @@ void BSP_144::SPIx_Error (void)
   * @param  None
   * @retval None
   */
-void BSP_144::SD_IO_Init(void)
+void BSP144::SD_IO_Init(void)
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
   uint8_t counter;
@@ -591,7 +591,7 @@ void BSP_144::SD_IO_Init(void)
   * @param  pin value.
   * @retval None
   */
-void BSP_144::SD_IO_CSState(uint8_t val)
+void BSP144::SD_IO_CSState(uint8_t val)
 {
   if(val == 1)
   {
@@ -608,7 +608,7 @@ void BSP_144::SD_IO_CSState(uint8_t val)
   * @param  Data: byte to send.
   * @retval None
   */
-void BSP_144::SD_IO_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint16_t DataLength)
+void BSP144::SD_IO_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint16_t DataLength)
 {
   /* Send the byte */
   SPIx_WriteReadData(DataIn, DataOut, DataLength);
@@ -619,7 +619,7 @@ void BSP_144::SD_IO_WriteReadData(const uint8_t *DataIn, uint8_t *DataOut, uint1
   * @param  Data: byte to send.
   * @retval None
   */
-uint8_t BSP_144::SD_IO_WriteByte(uint8_t Data)
+uint8_t BSP144::SD_IO_WriteByte(uint8_t Data)
 {
   uint8_t tmp;
   /* Send the byte */
@@ -635,7 +635,7 @@ uint8_t BSP_144::SD_IO_WriteByte(uint8_t Data)
   * @param  None
   * @retval None
   */
-void BSP_144::LCD_IO_Init(void)
+void BSP144::LCD_IO_Init(void)
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
 
@@ -666,7 +666,7 @@ void BSP_144::LCD_IO_Init(void)
   * @param  LCDReg: Address of the selected register.
   * @retval None
   */
-void BSP_144::LCD_IO_WriteReg(uint8_t LCDReg)
+void BSP144::LCD_IO_WriteReg(uint8_t LCDReg)
 {
   /* Reset LCD control line CS */
   LCD_CS_LOW();
@@ -687,7 +687,7 @@ void BSP_144::LCD_IO_WriteReg(uint8_t LCDReg)
   * @param  Data: data to write to the selected register.
   * @retval None
   */
-void BSP_144::LCD_IO_WriteData(uint8_t Data)
+void BSP144::LCD_IO_WriteData(uint8_t Data)
 {
   /* Reset LCD control line CS */
   LCD_CS_LOW();
@@ -708,7 +708,7 @@ void BSP_144::LCD_IO_WriteData(uint8_t Data)
 * @param  Size Size of byte to transmit to the register
 * @retval None
 */
-void BSP_144::LCD_IO_WriteMultipleData(uint8_t *pData, uint32_t Size)
+void BSP144::LCD_IO_WriteMultipleData(uint8_t *pData, uint32_t Size)
 {
   uint32_t counter = 0;
   __IO uint32_t data = 0;
@@ -764,7 +764,7 @@ void BSP_144::LCD_IO_WriteMultipleData(uint8_t *pData, uint32_t Size)
   * @param  Delay in ms.
   * @retval None
   */
-void BSP_144::LCD_Delay(uint32_t Delay)
+void BSP144::LCD_Delay(uint32_t Delay)
 {
   HAL_Delay(Delay);
 }
@@ -779,7 +779,7 @@ void BSP_144::LCD_Delay(uint32_t Delay)
   * @param  None
   * @retval None
   */
-static void BSP_144::ADCx_MspInit(ADC_HandleTypeDef *hadc)
+static void BSP144::ADCx_MspInit(ADC_HandleTypeDef *hadc)
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
 
@@ -804,7 +804,7 @@ static void BSP_144::ADCx_MspInit(ADC_HandleTypeDef *hadc)
   * @note ADC DeInit does not disable the GPIO clock
   * @retval None
   */
-static void BSP_144::ADCx_MspDeInit(ADC_HandleTypeDef *hadc)
+static void BSP144::ADCx_MspDeInit(ADC_HandleTypeDef *hadc)
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
 
@@ -825,7 +825,7 @@ static void BSP_144::ADCx_MspDeInit(ADC_HandleTypeDef *hadc)
   * @param  None
   * @retval None
   */
-static void BSP_144::ADCx_Init(void)
+static void BSP144::ADCx_Init(void)
 {
   if(HAL_ADC_GetState(&hnucleo_Adc) == HAL_ADC_STATE_RESET)
   {
@@ -851,7 +851,7 @@ static void BSP_144::ADCx_Init(void)
   * @param  None
   * @retval None
   */
-static void BSP_144::ADCx_DeInit(void)
+static void BSP144::ADCx_DeInit(void)
 {
     hnucleo_Adc.Instance   = NUCLEO_ADCx;
 
@@ -867,7 +867,7 @@ static void BSP_144::ADCx_DeInit(void)
   * @param  None
   * @retval Joystickstatus (0=> success, 1=> fail)
   */
-uint8_t BSP_144::JOY_Init(void)
+uint8_t BSP144::JOY_Init(void)
 {
   uint8_t status = HAL_ERROR;
 
@@ -888,7 +888,7 @@ uint8_t BSP_144::JOY_Init(void)
   * @note   JOY DeInit does not disable the Mfx, just set the Mfx pins in Off mode
   * @retval None.
   */
-void BSP_144::JOY_DeInit(void)
+void BSP144::JOY_DeInit(void)
 {
     ADCx_DeInit();
 }
@@ -905,7 +905,7 @@ void BSP_144::JOY_DeInit(void)
   *           - UP    : 1.65 V / 2046
   * @retval JOYState_TypeDef: Code of the Joystick key pressed.
   */
-JOYState_TypeDef BSP_144::JOY_GetState(void)
+JOYState_TypeDef BSP144::JOY_GetState(void)
 {
   JOYState_TypeDef state;
   uint16_t  keyconvertedvalue = 0;
