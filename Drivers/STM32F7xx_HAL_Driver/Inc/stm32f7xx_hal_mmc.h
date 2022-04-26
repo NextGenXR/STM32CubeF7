@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_MMC_H
 #define STM32F7xx_HAL_MMC_H
 
+#ifdef HAL_MMC_MODULE_ENABLED
+
 #if defined(SDMMC1)
 
 #ifdef __cplusplus
@@ -743,5 +745,7 @@ HAL_StatusTypeDef HAL_MMC_Abort_IT(MMC_HandleTypeDef *hmmc);
 #endif
 
 #endif /* SDMMC1 */
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_MMC_H */ 

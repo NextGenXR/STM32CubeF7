@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_JPEG_H
 #define STM32F7xx_HAL_JPEG_H
 
+#ifdef HAL_JPEG_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -648,6 +650,8 @@ uint32_t               HAL_JPEG_GetError(JPEG_HandleTypeDef *hjpeg);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_JPEG_H */
 

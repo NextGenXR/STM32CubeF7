@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_NAND_H
 #define STM32F7xx_HAL_NAND_H
 
+#ifdef HAL_NAND_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -373,5 +375,7 @@ uint32_t              HAL_NAND_Read_Status(NAND_HandleTypeDef *hnand);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_NAND_H */

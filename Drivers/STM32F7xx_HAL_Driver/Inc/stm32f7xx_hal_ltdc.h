@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_LTDC_H
 #define STM32F7xx_HAL_LTDC_H
 
+#ifdef HAL_LTDC_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -681,5 +683,7 @@ uint32_t              HAL_LTDC_GetError(LTDC_HandleTypeDef *hltdc);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_LTDC_H */

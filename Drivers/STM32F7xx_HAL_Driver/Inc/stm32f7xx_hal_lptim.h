@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_LPTIM_H
 #define STM32F7xx_HAL_LPTIM_H
 
+#ifdef HAL_LPTIM_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -826,5 +828,7 @@ void LPTIM_Disable(LPTIM_HandleTypeDef *hlptim);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_LPTIM_H */

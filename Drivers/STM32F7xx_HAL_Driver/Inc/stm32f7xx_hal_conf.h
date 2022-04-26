@@ -19,8 +19,8 @@
   */ 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __STM32F7xx_HAL_CONF_H
-#define __STM32F7xx_HAL_CONF_H
+#ifndef ___STM32F7xx_HAL_CONF_H
+#define ___STM32F7xx_HAL_CONF_H
 
 #if __has_include("..\..\Core\Inc\stm32f7xx_hal_conf.h")
  #include "..\..\Core\Inc\stm32f7xx_hal_conf.h"

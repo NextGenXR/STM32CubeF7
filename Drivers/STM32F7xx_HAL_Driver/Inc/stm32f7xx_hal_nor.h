@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_NOR_H
 #define STM32F7xx_HAL_NOR_H
 
+#ifdef HAL_NOR_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -320,5 +322,7 @@ HAL_NOR_StatusTypeDef HAL_NOR_GetStatus(NOR_HandleTypeDef *hnor, uint32_t Addres
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_NOR_H */

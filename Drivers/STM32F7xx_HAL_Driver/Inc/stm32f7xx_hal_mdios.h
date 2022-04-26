@@ -20,6 +20,8 @@
 #ifndef __STM32F7xx_HAL_MDIOS_H
 #define __STM32F7xx_HAL_MDIOS_H
 
+#ifdef HAL_MDIOS_MODULE_ENABLED
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -562,6 +564,8 @@ HAL_MDIOS_StateTypeDef HAL_MDIOS_GetState(MDIOS_HandleTypeDef *hmdios);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* __STM32F7xx_HAL_MDIOS_H */
 
