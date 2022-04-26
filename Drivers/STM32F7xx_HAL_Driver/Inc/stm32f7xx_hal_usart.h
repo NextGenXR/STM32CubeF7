@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_USART_H
 #define STM32F7xx_HAL_USART_H
 
+#ifdef HAL_USART_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -865,6 +867,8 @@ uint32_t               HAL_USART_GetError(USART_HandleTypeDef *husart);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_USART_H */
 

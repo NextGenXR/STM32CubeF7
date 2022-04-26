@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_WWDG_H
 #define STM32F7xx_HAL_WWDG_H
 
+#ifdef HAL_WWDG_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -294,5 +296,7 @@ void                  HAL_WWDG_EarlyWakeupCallback(WWDG_HandleTypeDef *hwwdg);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_WWDG_H */

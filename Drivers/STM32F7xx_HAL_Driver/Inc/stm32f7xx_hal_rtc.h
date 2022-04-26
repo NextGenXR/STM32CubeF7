@@ -20,6 +20,8 @@
 #ifndef __STM32F7xx_HAL_RTC_H
 #define __STM32F7xx_HAL_RTC_H
 
+#ifdef HAL_RTC_MODULE_ENABLED
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -854,6 +856,8 @@ uint8_t            RTC_Bcd2ToByte(uint8_t Value);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* __STM32F7xx_HAL_RTC_H */
 

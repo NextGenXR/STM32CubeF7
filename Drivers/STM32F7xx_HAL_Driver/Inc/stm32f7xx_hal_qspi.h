@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_QSPI_H
 #define STM32F7xx_HAL_QSPI_H
 
+#ifdef HAL_QSPI_MODULE_ENABLED
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -746,5 +748,7 @@ HAL_StatusTypeDef     HAL_QSPI_SetFlashID      (QSPI_HandleTypeDef *hqspi, uint3
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_QSPI_H */

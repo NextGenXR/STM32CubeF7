@@ -36,6 +36,8 @@
 #ifndef __STM32F7xx_LL_BUS_H
 #define __STM32F7xx_LL_BUS_H
 
+#if defined(LL_BUS_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -1968,6 +1970,8 @@ __STATIC_INLINE void LL_APB2_GRP1_DisableClockLowPower(uint32_t Periphs)
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* __STM32F7xx_LL_BUS_H */
 

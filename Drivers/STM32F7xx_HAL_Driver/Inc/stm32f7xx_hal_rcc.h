@@ -19,6 +19,8 @@
 #ifndef __STM32F7xx_HAL_RCC_H
 #define __STM32F7xx_HAL_RCC_H
 
+#ifdef HAL_RCC_MODULE_ENABLED
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -1302,6 +1304,8 @@ void HAL_RCC_CSSCallback(void);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* __STM32F7xx_HAL_RCC_H */
 

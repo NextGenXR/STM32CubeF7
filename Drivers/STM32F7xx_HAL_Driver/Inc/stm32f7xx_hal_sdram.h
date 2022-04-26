@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_SDRAM_H
 #define STM32F7xx_HAL_SDRAM_H
 
+#ifdef HAL_SDRAM_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -232,5 +234,7 @@ HAL_SDRAM_StateTypeDef  HAL_SDRAM_GetState(SDRAM_HandleTypeDef *hsdram);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_SDRAM_H */

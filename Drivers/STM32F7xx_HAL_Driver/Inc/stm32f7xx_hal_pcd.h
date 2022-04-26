@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_PCD_H
 #define STM32F7xx_HAL_PCD_H
 
+#ifdef HAL_PCD_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -455,5 +457,7 @@ PCD_StateTypeDef HAL_PCD_GetState(PCD_HandleTypeDef *hpcd);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_PCD_H */

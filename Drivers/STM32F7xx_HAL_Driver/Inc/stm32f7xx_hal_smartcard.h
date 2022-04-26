@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_SMARTCARD_H
 #define STM32F7xx_HAL_SMARTCARD_H
 
+#ifdef HAL_SMARTCARD_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -1143,6 +1145,8 @@ uint32_t                   HAL_SMARTCARD_GetError(SMARTCARD_HandleTypeDef *hsmar
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_SMARTCARD_H */
 

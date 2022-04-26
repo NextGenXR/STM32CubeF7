@@ -35,6 +35,8 @@
 #ifndef __STM32F7xx_LL_CORTEX_H
 #define __STM32F7xx_LL_CORTEX_H
 
+#if defined(LL_CORTEX_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -632,6 +634,8 @@ __STATIC_INLINE void LL_MPU_DisableRegion(uint32_t Region)
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* __STM32F7xx_LL_CORTEX_H */
 

@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_UART_H
 #define STM32F7xx_HAL_UART_H
 
+#ifdef HAL_UART_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -1627,6 +1629,8 @@ HAL_StatusTypeDef UART_Start_Receive_DMA(UART_HandleTypeDef *huart, uint8_t *pDa
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_UART_H */
 

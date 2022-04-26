@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_RNG_H
 #define STM32F7xx_HAL_RNG_H
 
+#ifdef HAL_RNG_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -356,6 +358,7 @@ uint32_t             HAL_RNG_GetError(RNG_HandleTypeDef *hrng);
 }
 #endif
 
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_RNG_H */
 

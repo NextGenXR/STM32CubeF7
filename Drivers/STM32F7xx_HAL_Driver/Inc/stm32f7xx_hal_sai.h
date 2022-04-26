@@ -20,6 +20,8 @@
 #ifndef __STM32F7xx_HAL_SAI_H
 #define __STM32F7xx_HAL_SAI_H
 
+#ifdef HAL_SAI_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -874,6 +876,8 @@ uint32_t HAL_SAI_GetError(SAI_HandleTypeDef *hsai);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* __STM32F7xx_HAL_SAI_H */
 

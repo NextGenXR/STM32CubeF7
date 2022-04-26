@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_LL_CRC_H
 #define STM32F7xx_LL_CRC_H
 
+#if defined(LL_CRC_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -457,5 +459,7 @@ ErrorStatus LL_CRC_DeInit(CRC_TypeDef *CRCx);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_LL_CRC_H */

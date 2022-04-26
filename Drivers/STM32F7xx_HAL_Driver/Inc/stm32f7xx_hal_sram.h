@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_SRAM_H
 #define STM32F7xx_HAL_SRAM_H
 
+#ifdef HAL_SRAM_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -226,5 +228,7 @@ HAL_SRAM_StateTypeDef HAL_SRAM_GetState(SRAM_HandleTypeDef *hsram);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_SRAM_H */

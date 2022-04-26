@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_TIM_H
 #define STM32F7xx_HAL_TIM_H
 
+#ifdef HAL_TIM_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -2382,5 +2384,7 @@ void TIM_ResetCallback(TIM_HandleTypeDef *htim);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_TIM_H */

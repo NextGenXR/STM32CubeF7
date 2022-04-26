@@ -20,6 +20,8 @@
 #ifndef __STM32F7xx_HAL_PWR_H
 #define __STM32F7xx_HAL_PWR_H
 
+#ifdef HAL_PWR_MODULE_ENABLED
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -397,6 +399,7 @@ void HAL_PWR_DisableSEVOnPend(void);
 }
 #endif
 
+#endif /* Module */
 
 #endif /* __STM32F7xx_HAL_PWR_H */
 

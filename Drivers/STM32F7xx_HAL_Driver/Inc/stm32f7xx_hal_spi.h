@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_SPI_H
 #define STM32F7xx_HAL_SPI_H
 
+#ifdef HAL_SPI_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -846,6 +848,8 @@ uint32_t             HAL_SPI_GetError(SPI_HandleTypeDef *hspi);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_SPI_H */
 

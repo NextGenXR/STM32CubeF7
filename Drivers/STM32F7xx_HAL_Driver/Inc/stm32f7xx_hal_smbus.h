@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_SMBUS_H
 #define STM32F7xx_HAL_SMBUS_H
 
+#ifdef HAL_SMBUS_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -785,5 +787,6 @@ uint32_t HAL_SMBUS_GetError(SMBUS_HandleTypeDef *hsmbus);
 }
 #endif
 
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_SMBUS_H */
