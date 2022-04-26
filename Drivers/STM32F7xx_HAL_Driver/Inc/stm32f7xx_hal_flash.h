@@ -19,6 +19,8 @@
 #ifndef __STM32F7xx_HAL_FLASH_H
 #define __STM32F7xx_HAL_FLASH_H
 
+#ifdef HAL_FLASH_MODULE_ENABLED
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -410,6 +412,8 @@ HAL_StatusTypeDef FLASH_WaitForLastOperation(uint32_t Timeout);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module Enabled */
 
 #endif /* __STM32F7xx_HAL_FLASH_H */
 

@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_IRDA_H
 #define STM32F7xx_HAL_IRDA_H
 
+#ifdef HAL_IRDA_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -846,6 +848,8 @@ uint32_t              HAL_IRDA_GetError(IRDA_HandleTypeDef *hirda);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_IRDA_H */
 

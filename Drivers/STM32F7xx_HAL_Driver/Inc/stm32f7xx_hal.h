@@ -21,6 +21,18 @@
 #ifndef __STM32F7xx_HAL_H
 #define __STM32F7xx_HAL_H
 
+ /** @defgroup HAL_TICK_FREQ Tick Frequency
+  * @{
+  */
+typedef enum
+{
+  HAL_TICK_FREQ_10HZ         = 100U,
+  HAL_TICK_FREQ_100HZ        = 10U,
+  HAL_TICK_FREQ_1KHZ         = 1U,
+  HAL_TICK_FREQ_DEFAULT      = HAL_TICK_FREQ_1KHZ
+} HAL_TickFreqTypeDef;
+
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -28,6 +40,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal_def.h"
 #include "stm32f7xx_hal_conf.h"
+
 
 
 /** @addtogroup STM32F7xx_HAL_Driver
@@ -45,16 +58,7 @@
   * @{
   */
 
-/** @defgroup HAL_TICK_FREQ Tick Frequency
-  * @{
-  */
-typedef enum
-{
-  HAL_TICK_FREQ_10HZ         = 100U,
-  HAL_TICK_FREQ_100HZ        = 10U,
-  HAL_TICK_FREQ_1KHZ         = 1U,
-  HAL_TICK_FREQ_DEFAULT      = HAL_TICK_FREQ_1KHZ
-} HAL_TickFreqTypeDef;
+
 /**
   * @}
   */

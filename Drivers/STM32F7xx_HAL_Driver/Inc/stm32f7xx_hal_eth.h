@@ -20,6 +20,8 @@
 #ifndef __STM32F7xx_HAL_ETH_H
 #define __STM32F7xx_HAL_ETH_H
 
+#ifdef HAL_ETH_MODULE_ENABLED
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -2208,6 +2210,8 @@ HAL_ETH_StateTypeDef HAL_ETH_GetState(ETH_HandleTypeDef *heth);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module Enabled */
 
 #endif /* __STM32F7xx_HAL_ETH_H */
 

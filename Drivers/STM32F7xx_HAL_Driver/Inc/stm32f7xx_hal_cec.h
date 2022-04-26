@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_CEC_H
 #define STM32F7xx_HAL_CEC_H
 
+#ifdef HAL_CEC_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -787,6 +789,8 @@ uint32_t HAL_CEC_GetError(CEC_HandleTypeDef *hcec);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module Enable */
 
 #endif /* STM32F7xxHAL_CEC_H */
 

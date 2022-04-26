@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_I2C_H
 #define STM32F7xx_HAL_I2C_H
 
+#ifdef HAL_I2C_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -831,5 +833,6 @@ uint32_t             HAL_I2C_GetError(I2C_HandleTypeDef *hi2c);
 }
 #endif
 
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_I2C_H */

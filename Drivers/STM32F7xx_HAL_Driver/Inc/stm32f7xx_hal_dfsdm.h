@@ -20,6 +20,8 @@
 #ifndef __STM32F7xx_HAL_DFSDM_H
 #define __STM32F7xx_HAL_DFSDM_H
 
+#ifdef HAL_DFSDM_MODULE_ENABLED
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -788,5 +790,7 @@ uint32_t                      HAL_DFSDM_FilterGetError(DFSDM_Filter_HandleTypeDe
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module Enabled */
 
 #endif /* __STM32F7xx_HAL_DFSDM_H */

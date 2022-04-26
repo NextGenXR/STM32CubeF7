@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_IWDG_H
 #define STM32F7xx_HAL_IWDG_H
 
+#ifdef HAL_IWDG_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -233,5 +235,7 @@ HAL_StatusTypeDef     HAL_IWDG_Refresh(IWDG_HandleTypeDef *hiwdg);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_IWDG_H */

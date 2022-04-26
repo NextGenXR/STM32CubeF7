@@ -20,6 +20,21 @@
 #ifndef STM32F7xx_HAL_CRC_H
 #define STM32F7xx_HAL_CRC_H
 
+#ifdef HAL_CRC_MODULE_ENABLED
+
+/**
+  * @brief  CRC HAL State Structure definition
+  */
+typedef enum
+{
+  HAL_CRC_STATE_RESET     = 0x00U,  /*!< CRC not yet initialized or disabled */
+  HAL_CRC_STATE_READY     = 0x01U,  /*!< CRC initialized and ready for use   */
+  HAL_CRC_STATE_BUSY      = 0x02U,  /*!< CRC internal process is ongoing     */
+  HAL_CRC_STATE_TIMEOUT   = 0x03U,  /*!< CRC timeout state                   */
+  HAL_CRC_STATE_ERROR     = 0x04U   /*!< CRC error state                     */
+} HAL_CRC_StateTypeDef;
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -40,17 +55,7 @@ extern "C" {
   * @{
   */
 
-/**
-  * @brief  CRC HAL State Structure definition
-  */
-typedef enum
-{
-  HAL_CRC_STATE_RESET     = 0x00U,  /*!< CRC not yet initialized or disabled */
-  HAL_CRC_STATE_READY     = 0x01U,  /*!< CRC initialized and ready for use   */
-  HAL_CRC_STATE_BUSY      = 0x02U,  /*!< CRC internal process is ongoing     */
-  HAL_CRC_STATE_TIMEOUT   = 0x03U,  /*!< CRC timeout state                   */
-  HAL_CRC_STATE_ERROR     = 0x04U   /*!< CRC error state                     */
-} HAL_CRC_StateTypeDef;
+
 
 /**
   * @brief CRC Init Structure definition
@@ -338,5 +343,7 @@ HAL_CRC_StateTypeDef HAL_CRC_GetState(CRC_HandleTypeDef *hcrc);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module Enable */
 
 #endif /* STM32F7xx_HAL_CRC_H */

@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_DSI_H
 #define STM32F7xx_HAL_DSI_H
 
+#ifdef HAL_DSI_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -1373,5 +1375,7 @@ HAL_DSI_StateTypeDef HAL_DSI_GetState(DSI_HandleTypeDef *hdsi);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module Enabled */
 
 #endif /* STM32F7xx_HAL_DSI_H */

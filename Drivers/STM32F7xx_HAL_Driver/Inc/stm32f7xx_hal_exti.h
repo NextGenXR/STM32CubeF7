@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_EXTI_H
 #define STM32F7xx_HAL_EXTI_H
 
+#ifdef HAL_EXTI_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -312,6 +314,8 @@ void HAL_EXTI_GenerateSWI(EXTI_HandleTypeDef *hexti);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_EXTI_H */
 

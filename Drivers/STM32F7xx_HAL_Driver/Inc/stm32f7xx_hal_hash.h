@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_HASH_H
 #define STM32F7xx_HAL_HASH_H
 
+#ifdef HAL_HASH_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -625,6 +627,7 @@ HAL_StatusTypeDef HMAC_Start_DMA(HASH_HandleTypeDef *hhash, uint8_t *pInBuffer, 
 }
 #endif
 
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_HASH_H */
 

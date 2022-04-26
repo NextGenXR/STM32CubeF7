@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_HCD_H
 #define STM32F7xx_HAL_HCD_H
 
+#ifdef HAL_HCD_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -312,5 +314,7 @@ uint32_t                HAL_HCD_GetCurrentSpeed(HCD_HandleTypeDef *hhcd);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_HCD_H */

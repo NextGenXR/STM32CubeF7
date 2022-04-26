@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_DCMI_H
 #define STM32F7xx_HAL_DCMI_H
 
+#ifdef HAL_DCMI_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -651,6 +653,8 @@ uint32_t              HAL_DCMI_GetError(DCMI_HandleTypeDef *hdcmi);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module Enabled */
 
 #endif /* STM32F7xx_HAL_DCMI_H */
 

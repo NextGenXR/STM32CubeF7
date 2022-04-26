@@ -20,9 +20,7 @@
 #ifndef STM32F7xx_HAL_CAN_H
 #define STM32F7xx_HAL_CAN_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#ifdef HAL_CAN_MODULE_ENABLED
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal_def.h"
@@ -271,7 +269,6 @@ typedef  void (*pCAN_CallbackTypeDef)(CAN_HandleTypeDef *hcan); /*!< pointer to 
 /**
   * @}
   */
-
 /* Exported constants --------------------------------------------------------*/
 
 /** @defgroup CAN_Exported_Constants CAN Exported Constants
@@ -533,6 +530,12 @@ typedef  void (*pCAN_CallbackTypeDef)(CAN_HandleTypeDef *hcan); /*!< pointer to 
 /**
   * @}
   */
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 
 /* Exported macros -----------------------------------------------------------*/
 /** @defgroup CAN_Exported_Macros CAN Exported Macros
@@ -842,5 +845,7 @@ HAL_StatusTypeDef HAL_CAN_ResetError(CAN_HandleTypeDef *hcan);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module enable */
 
 #endif /* STM32F7xx_HAL_CAN_H */

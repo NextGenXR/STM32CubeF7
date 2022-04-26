@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_I2S_H
 #define STM32F7xx_HAL_I2S_H
 
+#ifdef HAL_I2S_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -560,6 +562,8 @@ uint32_t HAL_I2S_GetError(I2S_HandleTypeDef *hi2s);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_I2S_H */
 

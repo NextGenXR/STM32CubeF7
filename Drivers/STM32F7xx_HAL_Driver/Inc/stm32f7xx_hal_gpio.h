@@ -20,6 +20,8 @@
 #ifndef __STM32F7xx_HAL_GPIO_H
 #define __STM32F7xx_HAL_GPIO_H
 
+#ifdef HAL_GPIO_MODULE_ENABLED
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -318,6 +320,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* __STM32F7xx_HAL_GPIO_H */
 
