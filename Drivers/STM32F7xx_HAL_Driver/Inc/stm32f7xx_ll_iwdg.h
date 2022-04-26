@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_LL_IWDG_H
 #define STM32F7xx_LL_IWDG_H
 
+#if defined(LL_IWDG_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -334,5 +336,7 @@ __STATIC_INLINE uint32_t LL_IWDG_IsReady(IWDG_TypeDef *IWDGx)
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_LL_IWDG_H */

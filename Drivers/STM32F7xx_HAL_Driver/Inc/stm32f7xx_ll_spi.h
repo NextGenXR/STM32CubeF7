@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_LL_SPI_H
 #define STM32F7xx_LL_SPI_H
 
+#if defined(LL_SPI_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -2277,6 +2279,8 @@ void        LL_I2S_ConfigPrescaler(SPI_TypeDef *SPIx, uint32_t PrescalerLinear, 
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_LL_SPI_H */
 

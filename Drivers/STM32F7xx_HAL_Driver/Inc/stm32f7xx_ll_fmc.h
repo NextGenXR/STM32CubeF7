@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_LL_FMC_H
 #define STM32F7xx_LL_FMC_H
 
+#if defined(LL_FMC_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -1145,5 +1147,7 @@ uint32_t           FMC_SDRAM_GetModeStatus(FMC_SDRAM_TypeDef *Device, uint32_t B
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_LL_FMC_H */

@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_LL_SDMMC_H
 #define STM32F7xx_LL_SDMMC_H
 
+#if defined(LL_SDMMC_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -1032,5 +1034,7 @@ uint32_t SDMMC_GetCmdResp7(SDMMC_TypeDef *SDMMCx);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_LL_SDMMC_H */

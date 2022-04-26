@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_LL_USART_H
 #define STM32F7xx_LL_USART_H
 
+#if defined(LL_USART_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -3792,6 +3794,8 @@ void        LL_USART_ClockStructInit(LL_USART_ClockInitTypeDef *USART_ClockInitS
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_LL_USART_H */
 

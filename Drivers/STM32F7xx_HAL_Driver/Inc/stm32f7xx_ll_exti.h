@@ -20,6 +20,8 @@
 #ifndef __STM32F7xx_LL_EXTI_H
 #define __STM32F7xx_LL_EXTI_H
 
+#if defined(LL_EXTI_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -943,6 +945,8 @@ void LL_EXTI_StructInit(LL_EXTI_InitTypeDef *EXTI_InitStruct);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* __STM32F7xx_LL_EXTI_H */
 

@@ -20,6 +20,8 @@
 #ifndef __STM32F7xx_LL_RTC_H
 #define __STM32F7xx_LL_RTC_H
 
+#if defined(LL_RTC_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -3811,6 +3813,8 @@ ErrorStatus LL_RTC_WaitForSynchro(RTC_TypeDef *RTCx);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* __STM32F7xx_LL_RTC_H */
 

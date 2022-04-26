@@ -15,6 +15,9 @@
   *
   ******************************************************************************
   */
+
+#if defined(LL_UTILS_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_ll_utils.h"
 #include "stm32f7xx_ll_rcc.h"
@@ -750,3 +753,4 @@ static ErrorStatus UTILS_EnablePLLAndSwitchSystem(uint32_t SYSCLK_Frequency, LL_
   * @}
   */
 
+#endif /* Module */

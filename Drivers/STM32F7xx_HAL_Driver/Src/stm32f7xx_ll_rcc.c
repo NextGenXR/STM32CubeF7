@@ -14,7 +14,7 @@
   * If no LICENSE file comes with this software, it is provided AS-IS.
   ******************************************************************************
   */
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(LL_RCC_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_ll_rcc.h"

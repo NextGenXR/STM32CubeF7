@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_LL_USB_H
 #define STM32F7xx_LL_USB_H
 
+#if defined(LL_USB_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
@@ -535,5 +537,6 @@ HAL_StatusTypeDef USB_DeActivateRemoteWakeup(USB_OTG_GlobalTypeDef *USBx);
 }
 #endif /* __cplusplus */
 
+#endif /* Module */
 
 #endif /* STM32F7xx_LL_USB_H */

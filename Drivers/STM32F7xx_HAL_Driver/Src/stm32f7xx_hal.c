@@ -34,6 +34,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal.h"
+#include "stm32f7xx_hal_conf.h"
+#include "stm32f7xx_hal_cortex.h"
 
 /** @addtogroup STM32F7xx_HAL_Driver
   * @{
@@ -135,6 +137,11 @@ HAL_TickFreqTypeDef uwTickFreq = HAL_TICK_FREQ_DEFAULT;  /* 1KHz */
   *         to have correct HAL operation.
   * @retval HAL status
   */
+
+#ifndef TICK_INT_PRIORITY
+#define  TICK_INT_PRIORITY            ((uint32_t)15U) /*!< tick interrupt priority */
+#endif
+
 HAL_StatusTypeDef HAL_Init(void)
 {
   /* Configure Instruction cache through ART accelerator */ 
@@ -157,7 +164,7 @@ HAL_StatusTypeDef HAL_Init(void)
   HAL_MspInit();
 
   /* Return function status */
-  return HAL_OK;
+  return (HAL_OK);
 }
 
 /**

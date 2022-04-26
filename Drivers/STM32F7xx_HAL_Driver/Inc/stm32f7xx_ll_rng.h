@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_LL_RNG_H
 #define STM32F7xx_LL_RNG_H
 
+#if defined(LL_RNG_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -330,6 +332,8 @@ ErrorStatus LL_RNG_DeInit(RNG_TypeDef *RNGx);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* __STM32F7xx_LL_RNG_H */
 

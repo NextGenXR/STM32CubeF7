@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_LL_I2C_H
 #define STM32F7xx_LL_I2C_H
 
+#if defined(LL_I2C_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -2228,5 +2230,7 @@ void LL_I2C_StructInit(LL_I2C_InitTypeDef *I2C_InitStruct);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_LL_I2C_H */

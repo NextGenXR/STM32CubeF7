@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_LL_LPTIM_H
 #define STM32F7xx_LL_LPTIM_H
 
+#if defined(LL_LPTIM_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -1353,5 +1355,7 @@ __STATIC_INLINE uint32_t LL_LPTIM_IsEnabledIT_DOWN(LPTIM_TypeDef *LPTIMx)
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_LL_LPTIM_H */

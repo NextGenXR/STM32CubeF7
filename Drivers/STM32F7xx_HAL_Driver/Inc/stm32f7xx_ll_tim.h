@@ -20,6 +20,8 @@
 #ifndef __STM32F7xx_LL_TIM_H
 #define __STM32F7xx_LL_TIM_H
 
+#if defined(LL_TIM_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -4725,5 +4727,7 @@ ErrorStatus LL_TIM_BDTR_Init(TIM_TypeDef *TIMx, LL_TIM_BDTR_InitTypeDef *TIM_BDT
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* __STM32F7xx_LL_TIM_H */

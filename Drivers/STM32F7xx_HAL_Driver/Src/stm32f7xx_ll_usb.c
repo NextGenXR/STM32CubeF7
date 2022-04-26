@@ -38,6 +38,8 @@
   ******************************************************************************
   */
 
+#if defined(LL_USB_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal.h"
 
@@ -2228,3 +2230,5 @@ HAL_StatusTypeDef USB_DeActivateRemoteWakeup(USB_OTG_GlobalTypeDef *USBx)
 /**
   * @}
   */
+
+#endif /* Module */

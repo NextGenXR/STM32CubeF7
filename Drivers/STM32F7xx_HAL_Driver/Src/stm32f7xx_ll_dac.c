@@ -15,7 +15,7 @@
   *
   ******************************************************************************
   */
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(LL_DAC_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_ll_dac.h"
