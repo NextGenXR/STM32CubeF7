@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_ADC_H
 #define STM32F7xx_ADC_H
 
+#ifdef HAL_ADC_MODULE_ENABLED
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -951,6 +953,8 @@ uint32_t HAL_ADC_GetError(ADC_HandleTypeDef *hadc);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* #ifdef HAL_ADC_MODULE_ENABLED */
 
 #endif /* STM32F7xx_ADC_H */
 

@@ -22,6 +22,10 @@
 #ifndef __STM32F7xx_HAL_CONF_H
 #define __STM32F7xx_HAL_CONF_H
 
+#if __has_include("..\..\Core\Inc\stm32f7xx_hal_conf.h")
+ #include "..\..\Core\Inc\stm32f7xx_hal_conf.h"
+ #else
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -33,6 +37,7 @@
 /**
   * @brief This is the list of modules to be used in the HAL driver 
   */
+
 #define HAL_MODULE_ENABLED  
 #define HAL_ADC_MODULE_ENABLED  
 #define HAL_CAN_MODULE_ENABLED
@@ -487,6 +492,8 @@
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* If HAL_CONF exists */
 
 #endif /* __STM32F7xx_HAL_CONF_H */
  
