@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_CRC_EX_H
 #define STM32F7xx_HAL_CRC_EX_H
 
+#ifdef HAL_CRC_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -146,5 +148,7 @@ HAL_StatusTypeDef HAL_CRCEx_Output_Data_Reverse(CRC_HandleTypeDef *hcrc, uint32_
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_CRC_EX_H */

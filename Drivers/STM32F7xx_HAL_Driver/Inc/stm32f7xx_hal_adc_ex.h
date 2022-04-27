@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_ADC_EX_H
 #define STM32F7xx_ADC_EX_H
 
+#ifdef HAL_ADC_MODULE_ENABLED
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -348,6 +350,8 @@ HAL_StatusTypeDef HAL_ADCEx_MultiModeConfigChannel(ADC_HandleTypeDef* hadc, ADC_
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_ADC_EX_H */
 

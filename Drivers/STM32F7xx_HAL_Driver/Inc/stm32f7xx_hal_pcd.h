@@ -22,10 +22,6 @@
 
 #ifdef HAL_PCD_MODULE_ENABLED
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_ll_usb.h"
 
@@ -232,6 +228,11 @@ typedef struct
 /**
   * @}
   */
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 
 /* Exported functions --------------------------------------------------------*/
 /** @addtogroup PCD_Exported_Functions PCD Exported Functions

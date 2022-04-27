@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_SMARTCARD_EX_H
 #define STM32F7xx_HAL_SMARTCARD_EX_H
 
+#ifdef HAL_SMARTCARD_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -260,6 +262,8 @@ HAL_StatusTypeDef HAL_SMARTCARDEx_DisableReceiverTimeOut(SMARTCARD_HandleTypeDef
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_SMARTCARD_EX_H */
 

@@ -22,10 +22,6 @@
 
 #ifdef HAL_DCMI_MODULE_ENABLED
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal_def.h"
 
@@ -506,6 +502,11 @@ typedef void (*pDCMI_CallbackTypeDef)(DCMI_HandleTypeDef *hdcmi);
 /** @addtogroup DCMI_Exported_Functions DCMI Exported Functions
   * @{
   */
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /** @addtogroup DCMI_Exported_Functions_Group1 Initialization and Configuration functions
  * @{

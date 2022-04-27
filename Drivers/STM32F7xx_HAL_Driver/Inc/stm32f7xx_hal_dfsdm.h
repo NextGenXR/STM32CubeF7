@@ -22,9 +22,6 @@
 
 #ifdef HAL_DFSDM_MODULE_ENABLED
 
-#ifdef __cplusplus
- extern "C" {
-#endif
 
 #if defined (STM32F765xx) || defined (STM32F767xx) || defined (STM32F769xx) || defined (STM32F777xx) || defined (STM32F779xx)
 /* Includes ------------------------------------------------------------------*/
@@ -542,6 +539,10 @@ typedef void (*pDFSDM_Filter_AwdCallbackTypeDef)(DFSDM_Filter_HandleTypeDef *hdf
   * @}
   */
 /* End of exported macros ----------------------------------------------------*/
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
   
 /* Exported functions --------------------------------------------------------*/  
 /** @addtogroup DFSDM_Exported_Functions DFSDM Exported Functions

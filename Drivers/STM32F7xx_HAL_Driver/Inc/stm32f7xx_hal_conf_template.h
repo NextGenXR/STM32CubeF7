@@ -19,8 +19,14 @@
   */ 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __STM32F7xx_HAL_CONF_H
-#define __STM32F7xx_HAL_CONF_H
+#ifndef ____STM32F7xx_HAL_CONF_H
+#define ____STM32F7xx_HAL_CONF_H
+
+#ifdef USE_TEMPLATE
+
+#if __has_include("..\..\Core\Inc\stm32f7xx_hal_conf.h")
+ #include "..\..\Core\Inc\stm32f7xx_hal_conf.h"
+ #else
 
 #ifdef __cplusplus
  extern "C" {
@@ -487,6 +493,10 @@
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* If other HAL_CONF exists */
+
+#endif /* USE_ TEMPLATE */
 
 #endif /* __STM32F7xx_HAL_CONF_H */
  

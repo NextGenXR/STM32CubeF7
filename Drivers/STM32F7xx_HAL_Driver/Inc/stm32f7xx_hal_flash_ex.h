@@ -19,6 +19,8 @@
 #ifndef __STM32F7xx_HAL_FLASH_EX_H
 #define __STM32F7xx_HAL_FLASH_EX_H
 
+#ifdef HAL_FLASH_MODULE_ENABLED
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -692,6 +694,8 @@ void FLASH_Erase_Sector(uint32_t Sector, uint8_t VoltageRange);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* __STM32F7xx_HAL_FLASH_EX_H */
 

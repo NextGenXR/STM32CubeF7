@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_I2C_EX_H
 #define STM32F7xx_HAL_I2C_EX_H
 
+#ifdef HAL_I2C_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -208,5 +210,7 @@ void HAL_I2CEx_DisableFastModePlus(uint32_t ConfigFastModePlus);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_I2C_EX_H */

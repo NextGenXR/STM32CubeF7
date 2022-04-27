@@ -20,6 +20,8 @@
 #ifndef __STM32F7xx_HAL_PWR_EX_H
 #define __STM32F7xx_HAL_PWR_EX_H
 
+#ifdef HAL_PWR_MODULE_ENABLED
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -255,6 +257,7 @@ HAL_StatusTypeDef HAL_PWREx_EnterUnderDriveSTOPMode(uint32_t Regulator, uint8_t 
 }
 #endif
 
+#endif /* Module */
 
 #endif /* __STM32F7xx_HAL_PWR_EX_H */
 

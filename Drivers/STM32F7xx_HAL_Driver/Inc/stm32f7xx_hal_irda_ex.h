@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_IRDA_EX_H
 #define STM32F7xx_HAL_IRDA_EX_H
 
+#ifdef HAL_IRDA_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -315,6 +317,8 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_IRDA_EX_H */
 

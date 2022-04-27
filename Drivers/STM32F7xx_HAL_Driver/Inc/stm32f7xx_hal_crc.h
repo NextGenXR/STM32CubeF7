@@ -35,10 +35,6 @@ typedef enum
 } HAL_CRC_StateTypeDef;
 
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal_def.h"
 
@@ -288,6 +284,12 @@ typedef struct
 /**
   * @}
   */
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 
 /* Include CRC HAL Extended module */
 #include "stm32f7xx_hal_crc_ex.h"

@@ -20,6 +20,8 @@
 #ifndef __STM32F7xx_HAL_CRYP_EX_H
 #define __STM32F7xx_HAL_CRYP_EX_H
 
+#ifdef HAL_CRYP_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -137,6 +139,8 @@ void  HAL_CRYPEx_DisableAutoKeyDerivation(CRYP_HandleTypeDef *hcryp);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* __STM32F7xx_HAL_CRYP_EX_H */
 

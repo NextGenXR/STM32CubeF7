@@ -20,13 +20,13 @@
 #ifndef STM32F7xx_HAL_HCD_H
 #define STM32F7xx_HAL_HCD_H
 
-#ifdef HAL_HCD_MODULE_ENABLED
-
-#ifdef __cplusplus
-extern "C" {
-#endif
+#if defined(HAL_HCD_MODULE_ENABLED) || defined (HAL_USB_MODULE_ENABLED)
 
 /* Includes ------------------------------------------------------------------*/
+#ifndef LL_USB_MODULE_ENABLED
+#define LL_USB_MODULE_ENABLED
+#endif
+
 #include "stm32f7xx_ll_usb.h"
 
 #if defined (USB_OTG_FS) || defined (USB_OTG_HS)
@@ -240,6 +240,10 @@ HAL_StatusTypeDef HAL_HCD_UnRegisterHC_NotifyURBChangeCallback(HCD_HandleTypeDef
 /**
   * @}
   */
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /* I/O operation functions  ***************************************************/
 /** @addtogroup HCD_Exported_Functions_Group2 Input and Output operation functions

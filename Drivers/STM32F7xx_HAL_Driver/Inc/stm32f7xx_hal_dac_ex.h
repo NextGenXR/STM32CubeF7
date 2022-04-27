@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_DAC_EX_H
 #define STM32F7xx_HAL_DAC_EX_H
 
+#ifdef HAL_DAC_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -196,6 +198,8 @@ void DAC_DMAHalfConvCpltCh2(DMA_HandleTypeDef *hdma);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_DAC_EX_H */
 

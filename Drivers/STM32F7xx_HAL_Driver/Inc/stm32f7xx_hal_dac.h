@@ -22,10 +22,6 @@
 
 #ifdef HAL_DAC_MODULE_ENABLED
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /** @addtogroup STM32F7xx_HAL_Driver
   * @{
   */
@@ -380,6 +376,10 @@ typedef void (*pDAC_CallbackTypeDef)(DAC_HandleTypeDef *hdac);
 /** @addtogroup DAC_Exported_Functions
   * @{
   */
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /** @addtogroup DAC_Exported_Functions_Group1
   * @{

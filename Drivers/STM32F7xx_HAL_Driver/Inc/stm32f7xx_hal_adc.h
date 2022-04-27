@@ -22,10 +22,6 @@
 
 #ifdef HAL_ADC_MODULE_ENABLED
 
-#ifdef __cplusplus
- extern "C" {
-#endif
-
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal_def.h"
 
@@ -596,6 +592,10 @@ typedef  void (*pADC_CallbackTypeDef)(ADC_HandleTypeDef *hadc); /*!< pointer to 
 /** @addtogroup ADC_Exported_Functions
   * @{
   */
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
 
 /** @addtogroup ADC_Exported_Functions_Group1
   * @{

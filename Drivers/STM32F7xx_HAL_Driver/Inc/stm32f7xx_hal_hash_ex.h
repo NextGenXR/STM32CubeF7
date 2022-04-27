@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_HASH_EX_H
 #define STM32F7xx_HAL_HASH_EX_H
 
+#ifdef HAL_HASH_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -170,6 +172,7 @@ HAL_StatusTypeDef HAL_HMACEx_SHA256_Step2_3_DMA(HASH_HandleTypeDef *hhash, uint8
 }
 #endif
 
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_HASH_EX_H */
 

@@ -20,11 +20,7 @@
 #ifndef STM32F7xx_LL_USB_H
 #define STM32F7xx_LL_USB_H
 
-#if defined(LL_USB_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
-
-#ifdef __cplusplus
-extern "C" {
-#endif /* __cplusplus */
+#if defined(LL_USB_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER) || defined(HAL_USB_MODULE_ENABLED)
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal_def.h"
@@ -454,6 +450,10 @@ typedef struct
 /**
   * @}
   */
+
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
 
 /* Exported functions --------------------------------------------------------*/
 /** @addtogroup USB_LL_Exported_Functions USB Low Layer Exported Functions

@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_TIM_EX_H
 #define STM32F7xx_HAL_TIM_EX_H
 
+#ifdef HAL_TIM_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -354,5 +356,6 @@ void TIMEx_DMACommutationHalfCplt(DMA_HandleTypeDef *hdma);
 }
 #endif
 
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_TIM_EX_H */

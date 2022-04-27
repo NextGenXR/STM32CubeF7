@@ -20,6 +20,8 @@
 #ifndef STM32F7xx_HAL_DMA2D_H
 #define STM32F7xx_HAL_DMA2D_H
 
+#ifdef HAL_DMA2D_MODULE_ENABLED
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -677,5 +679,7 @@ uint32_t               HAL_DMA2D_GetError(DMA2D_HandleTypeDef *hdma2d);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* Module */
 
 #endif /* STM32F7xx_HAL_DMA2D_H */
