@@ -20,7 +20,8 @@
 #ifndef STM32F7xx_LL_USB_H
 #define STM32F7xx_LL_USB_H
 
-#if defined(LL_USB_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER) || defined(HAL_USB_MODULE_ENABLED)
+#if defined(LL_USB_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER) || \
+		defined(HAL_USB_MODULE_ENABLED) || defined(HAL_PCD_MODULE_ENABLED)
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal_def.h"

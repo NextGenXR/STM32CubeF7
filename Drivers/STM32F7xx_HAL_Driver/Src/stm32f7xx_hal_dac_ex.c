@@ -50,7 +50,7 @@
   * @{
   */
 
-#ifdef HAL_DAC_MODULE_ENABLED
+#ifdef HAL_DAC_MODULE_ENABLED1
 
 #if defined(DAC)
 

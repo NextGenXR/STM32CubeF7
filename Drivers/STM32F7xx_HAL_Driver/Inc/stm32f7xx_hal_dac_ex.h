@@ -20,7 +20,7 @@
 #ifndef STM32F7xx_HAL_DAC_EX_H
 #define STM32F7xx_HAL_DAC_EX_H
 
-#ifdef HAL_DAC_MODULE_ENABLED
+#if defined(HAL_DAC_MODULE_ENABLED)
 
 #ifdef __cplusplus
 extern "C" {

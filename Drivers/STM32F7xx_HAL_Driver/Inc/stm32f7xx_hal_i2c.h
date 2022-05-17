@@ -22,16 +22,13 @@
 
 #ifdef HAL_I2C_MODULE_ENABLED
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal_def.h"
 
 /** @addtogroup STM32F7xx_HAL_Driver
   * @{
   */
+
 
 /** @addtogroup I2C
   * @{
@@ -592,6 +589,10 @@ typedef  void (*pI2C_AddrCallbackTypeDef)(I2C_HandleTypeDef *hi2c, uint8_t Trans
 /** @addtogroup I2C_Exported_Functions
   * @{
   */
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /** @addtogroup I2C_Exported_Functions_Group1 Initialization and de-initialization functions
   * @{

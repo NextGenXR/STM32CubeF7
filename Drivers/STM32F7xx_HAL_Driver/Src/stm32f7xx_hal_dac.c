@@ -218,13 +218,14 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f7xx_hal.h"
+#include "stm32f7xx_hal_conf.h"
 
 /** @addtogroup STM32F7xx_HAL_Driver
   * @{
   */
 
-#ifdef HAL_DAC_MODULE_ENABLED
+#if defined(HAL_DAC_MODULE_ENABLED1)
+
 #if defined(DAC)
 
 /** @defgroup DAC DAC

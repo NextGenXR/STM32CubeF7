@@ -38,7 +38,8 @@
   ******************************************************************************
   */
 
-#if defined(LL_USB_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER)
+#if defined(LL_USB_MODULE_ENABLED) || defined(USE_FULL_LL_DRIVER) || \
+		defined(HAL_USB_MODULE_ENABLED) || defined(HAL_PCD_MODULE_ENABLED)
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal.h"

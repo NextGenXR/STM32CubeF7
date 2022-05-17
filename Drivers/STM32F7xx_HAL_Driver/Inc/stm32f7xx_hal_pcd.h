@@ -20,7 +20,15 @@
 #ifndef STM32F7xx_HAL_PCD_H
 #define STM32F7xx_HAL_PCD_H
 
-#ifdef HAL_PCD_MODULE_ENABLED
+#if defined(HAL_PCD_MODULE_ENABLED) || defined (HAL_USB_MODULE_ENABLED)
+
+#ifndef HAL_USB_MODULE_ENABLED
+#define HAL_USB_MODULE_ENABLED
+#endif
+
+#ifndef HAL_HCD_MODULE_ENABLED
+#define HAL_HCD_MODULE_ENABLED
+#endif
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_ll_usb.h"
@@ -232,7 +240,6 @@ typedef struct
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 
 /* Exported functions --------------------------------------------------------*/
 /** @addtogroup PCD_Exported_Functions PCD Exported Functions

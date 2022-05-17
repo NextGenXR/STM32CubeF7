@@ -20,7 +20,8 @@
 #ifndef STM32F7xx_HAL_DAC_H
 #define STM32F7xx_HAL_DAC_H
 
-#ifdef HAL_DAC_MODULE_ENABLED
+#if defined(HAL_DAC_MODULE_ENABLED)
+
 
 /** @addtogroup STM32F7xx_HAL_Driver
   * @{

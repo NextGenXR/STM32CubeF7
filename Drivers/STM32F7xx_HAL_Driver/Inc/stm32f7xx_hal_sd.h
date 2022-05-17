@@ -27,6 +27,7 @@
 #if defined(SDMMC1)
 
 /* Includes ------------------------------------------------------------------*/
+#define LL_SDMMC_MODULE_ENABLED
 #include "stm32f7xx_ll_sdmmc.h"
 
 /** @addtogroup STM32F7xx_HAL_Driver
