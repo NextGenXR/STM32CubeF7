@@ -1,9 +1,28 @@
-/*
- * stm32f7xxnucleo144.h
- *
- *  Created on: Jan 8, 2022
- *      Author: jenni
- */
+/** 
+  ******************************************************************************
+  * @file    stm32f7xx_nucleo_144.h
+  * @author  MCD Application Team
+  * @brief   This file contains definitions for:
+  *          - LEDs and push-button available on STM32F7XX-Nucleo-144 Kit 
+  *            from STMicroelectronics
+  *          - LCD, joystick and microSD available on Adafruit 1.8" TFT LCD 
+  *            shield (reference ID 802)
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2015 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+  
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __STM32F7XX_NUCLEO_144_H
+#define __STM32F7XX_NUCLEO_144_H
 
 #ifndef BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_H_
 #define BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_H_
@@ -39,11 +58,51 @@
   * @{
   */
 
+/** @addtogroup STM32F7XX_NUCLEO_144_LOW_LEVEL
+  * @{
+  */ 
+
+/** @defgroup STM32F7XX_NUCLEO_144_LOW_LEVEL_Exported_Types LOW LEVEL Exported Types
+  * @{
+  */
+typedef enum 
+{
+  LED1 = 0,
+  LED_GREEN = LED1,
+  LED2 = 1,
+  LED_BLUE = LED2,
+  LED3 = 2,
+  LED_RED = LED3
+}Led_TypeDef;
+
+typedef enum 
+{  
+  BUTTON_USER = 0,
+  /* Alias */
+  BUTTON_KEY = BUTTON_USER
+}Button_TypeDef;
+
+typedef enum 
+{  
+  BUTTON_MODE_GPIO = 0,
+  BUTTON_MODE_EXTI = 1
+}ButtonMode_TypeDef;
+
+typedef enum 
+{ 
+  JOY_NONE  = 0,
+  JOY_SEL   = 1,
+  JOY_DOWN  = 2,
+  JOY_LEFT  = 3,
+  JOY_RIGHT = 4,
+  JOY_UP    = 5
+}JOYState_TypeDef;
+
 /**
   * @}
   */
 
-/** @defgroup STM32F7XX_NUCLEO_144_LOW_LEVEL_Exported_Constants
+/** @defgroup STM32F7XX_NUCLEO_144_LOW_LEVEL_Exported_Constants LOW LEVEL Exported Constants
   * @{
   */
 
@@ -228,4 +287,55 @@
 #endif /* HAL_ADC_MODULE_ENABLED */
 
 
-#endif /* BSP_STM32F7XX_NUCLEO_144_STM32F7XX_NUCLEO_144_H_ */
+/**
+  * @}
+  */
+
+/** @defgroup STM32F7XX_NUCLEO_144_LOW_LEVEL_Exported_Macros LOW LEVEL Exported Macros
+  * @{
+  */  
+/**
+  * @}
+  */ 
+
+/** @defgroup STM32F7XX_NUCLEO_144_LOW_LEVEL_Exported_Functions LOW LEVEL Exported Functions
+  * @{
+  */
+uint32_t         BSP_GetVersion(void);  
+void             BSP_LED_Init(Led_TypeDef Led);
+void             BSP_LED_DeInit(Led_TypeDef Led);
+void             BSP_LED_On(Led_TypeDef Led);
+void             BSP_LED_Off(Led_TypeDef Led);
+void             BSP_LED_Toggle(Led_TypeDef Led);
+void             BSP_PB_Init(Button_TypeDef Button, ButtonMode_TypeDef ButtonMode);
+void             BSP_PB_DeInit(Button_TypeDef Button);
+uint32_t         BSP_PB_GetState(Button_TypeDef Button);
+#ifdef HAL_ADC_MODULE_ENABLED
+uint8_t          BSP_JOY_Init(void);
+JOYState_TypeDef BSP_JOY_GetState(void);
+void             BSP_JOY_DeInit(void);
+#endif /* HAL_ADC_MODULE_ENABLED */
+
+  
+/**
+  * @}
+  */ 
+
+/**
+  * @}
+  */ 
+
+/**
+  * @}
+  */
+
+/**
+  * @}
+  */
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* __STM32F7XX_NUCLEO_144_H */
+
