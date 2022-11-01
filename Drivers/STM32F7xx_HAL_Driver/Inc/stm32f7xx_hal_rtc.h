@@ -162,7 +162,7 @@ typedef struct
 #if (USE_HAL_RTC_REGISTER_CALLBACKS == 1)
 typedef struct __RTC_HandleTypeDef
 #else
-typedef struct
+typedef struct // @suppress("Miss copy constructor or assignment operator")
 #endif /* USE_HAL_RTC_REGISTER_CALLBACKS */
 {
   RTC_TypeDef                 *Instance;  /*!< Register base address    */
