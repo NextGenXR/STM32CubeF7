@@ -1190,10 +1190,6 @@ typedef struct
   * @}
   */
 
-/** @defgroup TIM_LL_EM_Exported_Macros Exported_Macros
-  * @{
-  */
-
 /**
   * @brief  HELPER macro retrieving the UIFCPY flag from the counter value.
   * @note ex: @ref __LL_TIM_GETFLAG_UIFCPY (@ref LL_TIM_GetCounter ());
